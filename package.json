@@ -43,7 +43,9 @@
     "e2e-selenium": "run-p -r hot-e2e-selenium-server mock-api test-e2e-selenium",
     "open-static": "node -e 'require(\"open\")(\"http://localhost:3002\")'",
     "serve-static": "http-server dist/ -i -a 0.0.0.0 -p 3002",
-    "start": "npm-run-all --parallel serve-static open-static"
+    "start": "npm-run-all --parallel serve-static open-static",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@braintree/sanitize-url": "^2.0.2",
@@ -78,7 +80,8 @@
     "swagger-client": "^3.8.25",
     "url-parse": "^1.4.3",
     "xml-but-prettier": "^1.0.1",
-    "zenscroll": "^4.0.2"
+    "zenscroll": "^4.0.2",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.4.1",
@@ -169,5 +172,6 @@
       "maxSize": "1 MB",
       "compression": "none"
     }
-  ]
+  ],
+  "snyk": true
 }
